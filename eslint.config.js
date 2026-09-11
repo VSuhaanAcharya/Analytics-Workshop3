@@ -40,4 +40,12 @@ export default [
       parser: tseslint.parser,
     },
   },
+  // Keep exported data-layer APIs explicit and consistently shaped.
+  {
+    files: ["db/**/*.ts", "src/lib/**/*.ts"],
+    rules: {
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+      "@typescript-eslint/explicit-module-boundary-types": "error",
+    },
+  },
 ];
